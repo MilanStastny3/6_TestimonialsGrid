@@ -1,0 +1,268 @@
+/* --VARIABLES-- */
+
+:root {
+
+  --attribution_a_color: hsl(228, 45%, 44%);
+  --moderate_violet: hsl(263, 55%, 52%);
+  --very_dark_grayish_blue:  hsl(217, 19%, 35%);
+  --very_dark_blackish_blue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+  --light_gray: hsl(0, 0%, 81%);
+  --light_grayish_blue: hsl(210, 46%, 95%);
+
+}
+
+
+/* --GENERAL CSS SETTINGS-- */
+
+html {
+  font-size: 62.5%; /* Make the font size 10px heigh for better calculation with em or rem */
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--light_grayish_blue);
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  font-weight: 500;
+}
+
+/* --MAIN CONTENT CSS-- */
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.grid_container {
+  height: 90rem;
+
+  display: grid;
+  grid-template-columns: repeat(4, 255px);
+  grid-template-rows: 28.2rem 26.6rem;
+  gap: 22px 22px;
+  grid-template-areas: 
+    "test1 test1 test2 test3"
+    "test4 test5 test5 test3";
+  grid-column-gap: 3rem;
+  grid-row-gap: 2.4rem;
+  justify-content: center;
+  align-content: center;
+  letter-spacing: .03px;
+}
+
+section {
+  border-radius: .8rem;
+  box-shadow: 40px 60px 50px -47px rgb(72 85 106 / 25%);
+  padding: 2.6rem 3.2rem;
+}
+
+.light {
+  color: var(--white);
+}
+
+.dark {
+  color: var(--very_dark_grayish_blue);
+}
+
+.person-details,
+.person-img {
+  display: inline-block;
+}
+
+.person-img img{
+  border: 2px solid;
+  border-radius: 50%;
+  height: 3.2rem;
+  width: auto;
+
+}
+
+.person-details {
+  margin-left: 1.5rem;
+  position: relative;
+  top: -.2rem;
+}
+
+.person-details h3 {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.person-details p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  opacity: .5;
+  margin-top: -0.2rem;
+}
+
+.info {
+  margin-top: 1.6rem;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  font-weight: 500;
+  opacity: .7;
+}
+
+.quotation {
+  margin-top: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 2.4rem;
+  opacity: .9;
+}
+
+/* --TESTIMONY 1 CSS-- */
+
+.test1 {
+  background-color: var(--moderate_violet);
+  grid-area: test1;
+  position: relative;
+}
+
+.quotes img {
+  position: absolute;
+  top: 0;
+  right: 8rem;
+  max-height: 10.2rem;
+  min-width: 10.4rem;
+}
+
+.test1 .person-img img {
+  border-color: #A775f1;
+}
+
+.test1 h2 {
+  position: relative;
+}
+
+/* --TESTIMONY 2 CSS-- */
+
+.test2 {
+  background-color: var(--very_dark_grayish_blue);
+  grid-area: test2;
+}
+
+.test2 .person-img img {
+  border-color: var(--light_gray);
+}
+
+/* --TESTIMONY 3 CSS-- */
+
+.test3 {
+  background-color: var(--white);
+  grid-area: test3;
+}
+
+.test3 .person-img img {
+  border-color: var(--light_gray);
+}
+
+/* --TESTIMONY 4 CSS-- */
+
+.test4 {
+  background-color: var(--white);
+  grid-area: test4;
+}
+
+.test4 .person-img img {
+  border-color: var(--light_gray);
+}
+
+/* --TESTIMONY 5 CSS-- */
+
+.test5 {
+  background-color: var(--very_dark_blackish_blue);
+  grid-area: test5;
+}
+
+.test5 .person-img img {
+  border-color: var(--moderate_violet);
+}
+
+
+/* --FOOTER CSS-- */
+
+.attribution { 
+  font-size: 1.1rem; 
+  text-align: center;
+  padding-bottom: 1rem; 
+}
+
+.attribution a { 
+  color: var(--attribution_a_color); 
+}
+
+/* --MEDIA QUERIES */
+
+@media (max-width: 1150px) {
+
+  .grid_container {
+    grid-template-columns: repeat(3, 255px);
+    grid-template-rows: 28.2rem 26.6rem 26.6rem;
+    grid-template-areas: 
+      "test1 test1 test2"
+      "test4 test5 test5"
+      "test3 test3 test3";
+    grid-column-gap: 3rem;
+    grid-row-gap: 2.4rem;
+    justify-content: center;
+    align-content: center;
+    letter-spacing: .03px;
+    margin-top: 7.1rem;
+    margin-bottom: 7.1rem;
+  }
+
+}
+
+@media (max-width: 850px) {
+
+  .grid_container {
+    height: auto;
+    grid-template-columns: repeat(2, 255px);
+    grid-template-rows: 28.2rem 26.6rem 28.2rem 28.2rem;
+    grid-template-areas: 
+      "test1 test1"
+      "test2 test4"
+      "test5 test5"
+      "test3 test3";
+    grid-column-gap: 3rem;
+    grid-row-gap: 2.4rem;
+    justify-content: center;
+    align-content: center;
+    letter-spacing: .03px;
+    margin-top: 7.1rem;
+    margin-bottom: 7.1rem;
+  }
+
+}
+
+@media (max-width: 575px) {
+
+  .grid_container {
+    height: auto;
+    grid-template-columns: 32.7rem;
+    grid-template-rows: 44.4rem 24rem 22.2rem 38.4rem 43.8rem;
+    grid-template-areas: 
+      "test1"
+      "test2"
+      "test4"
+      "test5"
+      "test3";
+    grid-column-gap: 3rem;
+    grid-row-gap: 2.4rem;
+    justify-content: center;
+    align-content: center;
+    letter-spacing: .03px;
+  }
+
+}
